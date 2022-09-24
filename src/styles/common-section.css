@@ -1,0 +1,18 @@
+.common__section {
+  background: linear-gradient(#fffcfc, #ff161694),
+    url("../assets/all-images/pers.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 130px 0px;
+  font-family: 'Arkusi', sans-serif !important;
+}
+ .common{
+  font-family:"Poppins";
+  font-size:100px;
+ }
+ @media only screen and (max-width: 768px) {
+  .common{
+    font-size:70px;
+   }
+ }

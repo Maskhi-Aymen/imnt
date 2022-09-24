@@ -1,0 +1,115 @@
+.become__driver {
+  background: 
+  url("../assets/all-images/slider-img/shape.png");
+background-position: bottom;
+background-size: 100%;
+background-repeat: no-repeat;
+}
+.galerie_div{
+border-radius: 25px;
+padding: 12px;
+}
+
+.photo_galerie{
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin: 2px;
+  height: 350px;
+  max-width: 400px;
+  border-radius: 25px;
+  border: #707173 2px solid;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: center;
+}
+.grid-item {
+  height: 250px;
+  width: 230px;
+  margin: 9px;
+ }
+.grid-item img{
+  border: 7px solid;
+  border-image: linear-gradient(45deg, rgb(0, 0, 0), rgba(19, 1, 1, 0.579)) 1;
+padding: 3px;
+background-color: #fff;
+  height: 250px;
+width: 210px;
+transition: all 4;
+  
+}
+.grid-item img:hover{
+  border-image: linear-gradient(45deg, #E2001A, rgba(111, 110, 110, 0.579)) 1;
+  box-shadow: 3px 3px #7c8a9736, 0.3em 0 .2em #7c8a9736;
+}
+.become__driver button {
+  background: #fff;
+  color: #E2001A;
+  font-weight: 600;
+  border-radius: 0%;
+}
+
+.become__driver-title {
+  font-size: 2.8rem;
+  color: #fff;
+  line-height: 65px;
+}
+
+@media only screen and (max-width: 992px) {
+  .become__driver-title {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+  }
+
+  .grid-item {
+    height: 230px;
+    width: 190px;
+    margin: 0px;
+   }
+  .grid-item img{
+    border: 7px solid;
+    border-image: linear-gradient(45deg, rgb(0, 0, 0), rgba(19, 1, 1, 0.579)) 1;
+  padding: 3px;
+  background-color: #fff;
+    height: 200px;
+  width: 160px;
+    
+  }
+  .become__driver {
+    padding: 20px 0px;
+  }
+  .photo_galerie{
+    width: 100px;
+    height: 140px;
+    border-radius: 25px;
+    border: #707173 2px solid;
+  }
+  .become__driver-title {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+  }
+
+  .become__driver-btn {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .become__driver-img {
+    display: none;
+  }
+  .become__driver {
+    text-align: center;
+  }
+}
+
+

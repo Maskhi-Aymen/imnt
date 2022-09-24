@@ -1,0 +1,9 @@
+#login__section {
+    background: 
+      url("../assets/all-images/chapeaus.png");
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat;
+    padding: 1px;
+    font-family: 'Arkusi', sans-serif !important;
+  }

@@ -1,0 +1,137 @@
+/* ======== google fonts ======== */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+/* ======= base style ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* ========= pre-define css ========= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0c0101;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+h3,
+h4 {
+  font-size: 1.6rem;
+}
+
+h5,
+h6 {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+}
+
+ul {
+  margin: 0;
+}
+
+.section__title {
+  color: #0c0101;
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.section__subtitle {
+  color: #E2001A;
+  font-weight: 600; 
+  font-size: 2.2rem;
+}
+
+.section__description {
+  color: #0C0101;
+  font-size: 0.9rem;
+  line-height: 30px;
+}
+
+section {
+  padding: 50px 0px;
+}
+
+.btn {
+  padding: 7px 15px;
+  background: #0c0101;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  color: #fff !important;
+  background: #000c6bd0;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 30px 0px;
+  }
+
+  .section__title {
+    font-size: 1.6rem;
+  }
+
+  .section__subtitle {
+    font-size: 1.1rem;
+  }
+}
+/************ Custom Font ************/
+@font-face {
+	font-family: Montserrat;
+	src: url('./assets/font/Montserrat-Regular.ttf');
+	font-weight: 700;
+}@font-face {
+	font-family: Montserrat;
+	src: url('./assets/font/Montserrat-Bold.ttf');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Poppins;
+	src: url('./assets/font/Poppins-SemiBold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Arkusi;
+	src: url('./assets/font/Arkusi.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Lemontea;
+	src: url('./assets/font/Lemontea.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Book.ttf');
+	font-weight: 400;
+}
