@@ -1,8 +1,10 @@
 import React from "react";
 import logo from "../../assets/all-images/imnt-blanc.png";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import { FileDownload } from "js-file-download";
 import { BiEnvelope,BiAlarm,BiMap,BiMobile } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "../../styles/footer.css";
 import navIcon1 from "../../assets/all-images/nav-icon1.svg";
 import navIcon2 from "../../assets/all-images/nav-icon2.svg";
@@ -36,6 +38,21 @@ const quickLinks = [
 ];
 
 const Footer = () => {
+  const DownloadHandler = async (id) => {
+    try {
+      const data  = await axios.get(`https://imntservice.herokuapp.com/api/users/download`,{
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": "Bearer "
+        }
+      }).then((res)=>{
+        FileDownload(res.data,"CATALOGUE-IMNT-2022.pdf")
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const date = new Date();
   const year = date.getFullYear();
   return (
@@ -83,13 +100,12 @@ const Footer = () => {
 
           <Col lg="3" md="4" sm="12">
             <div className="mb-4">
-              <h5 className="footer__link-title">Newsletter</h5>
-              <p className="section__description">Subscribe our newsletter</p>
+              <h5 className="footer__link-title">Catalogue </h5>
+              <p className="section__description" style={{color:"rgba(255, 255, 255, 0.715)"}}>Télecharger notre catalalogue des formations</p>
               <div className="newsletter">
-                <input type="email" placeholder="Email" style={{color:'white'}} />
-                <span onClick={()=>{window.location.reload(true)}}>
-                  <i class="ri-send-plane-line"></i>
-                </span>
+              <button className=" w-50 car__item-btn car__btn-rent" style={{color:"white"}} onClick={DownloadHandler} >
+            Telechargher
+          </button>
               </div>
             </div>
             <CDBBox display="flex" className="mt-4">
