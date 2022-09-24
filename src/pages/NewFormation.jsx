@@ -32,7 +32,7 @@ const NewFormation= () => {
     setisvalid(true)  
     let formData= new FormData();
     formData.append("img",imgUrl);
-    formData.append("imgUrl","http://localhost:5000/uploads/"+imgUrl.name);
+    formData.append("imgUrl","https://imntservice.herokuapp.com//uploads/"+imgUrl.name);
     formData.append("title",title);
     formData.append("type",type);
     formData.append("participant",participant);
@@ -44,7 +44,7 @@ const NewFormation= () => {
     formData.append("description",description);
     try {
 
-      const  data  = await axios.post(`http://localhost:5000/api/formations/add/${userId}`, formData, {
+      const  data  = await axios.post(`https://imntservice.herokuapp.com//api/formations/add/${userId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

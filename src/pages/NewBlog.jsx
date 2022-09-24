@@ -40,7 +40,7 @@ const NewBlog = () => {
     setisvalid(true)  
     let formData= new FormData();
     formData.append("img",imgUrl);
-    formData.append("imgUrl","http://localhost:5000/uploads/"+imgUrl.name);
+    formData.append("imgUrl","https://imntservice.herokuapp.com//uploads/"+imgUrl.name);
     formData.append("title",titleblog);
     formData.append("date",date);
     formData.append("author",author);
@@ -49,7 +49,7 @@ const NewBlog = () => {
     formData.append("description",description);
     try {
 
-      const  data  = await axios.post(`http://localhost:5000/api/blog/add/${userId}`, formData, {
+      const  data  = await axios.post(`https://imntservice.herokuapp.com//api/blog/add/${userId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

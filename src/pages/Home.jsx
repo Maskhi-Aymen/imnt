@@ -60,7 +60,7 @@ const Home = () => {
      
        
      try {
-       const result = await axios.get(`http://localhost:5000/api/formations/getall`);
+       const result = await axios.get(`https://imntservice.herokuapp.com//api/formations/getall`);
        setCarData(result.data) 
      } catch(err) {
        console.log("Error!");

@@ -25,7 +25,7 @@ const BookingForm = () => {
     if (name && lastname && email && numtel) {
       const date=new Date().toDateString();
       try {
-         await axios.post(`http://localhost:5000/api/formations/inscription/${slug}`, {
+         await axios.post(`https://imntservice.herokuapp.com//api/formations/inscription/${slug}`, {
         name,lastname,email,numtel,date
       },{
         headers: {

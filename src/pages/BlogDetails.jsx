@@ -26,7 +26,7 @@ const BlogDetails = () => {
     formDataA.append("date",new Date().toDateString());
     formDataA.append("comment",comment);
     try {
-      const  data  = await axios.post(`http://localhost:5000/api/blog/comment/${slug}`, 
+      const  data  = await axios.post(`https://imntservice.herokuapp.com//api/blog/comment/${slug}`, 
       {user:userInfo.username,
         date:new Date().toDateString(),
         comment:comment}, {
@@ -62,7 +62,7 @@ useEffect(() => {
     
       
     try {
-      const result = await axios.get(`http://localhost:5000/api/blog/${slug}`);
+      const result = await axios.get(`https://imntservice.herokuapp.com//api/blog/${slug}`);
       setBlog(result.data);
       setImgUrl(result.data.imgUrl);
       setDate(result.data.date);
@@ -89,7 +89,7 @@ const[blogData,setBlogData]=useState([]);
 useEffect(() => {
   const fetchData = async () => {  
     try {
-      const result = await axios.get(`http://localhost:5000/api/blog/getall`);
+      const result = await axios.get(`https://imntservice.herokuapp.com//api/blog/getall`);
       setBlogData(result.data)
 
     } catch(err) {

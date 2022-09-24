@@ -27,7 +27,7 @@ const [blog,setBlog] = useState([])
 
   const deleteHandler = async (id) => {
     try {
-      const data  = await axios.delete(`http://localhost:5000/api/blog/comment/${userId}/${slug}/${id}`,{
+      const data  = await axios.delete(`https://imntservice.herokuapp.com//api/blog/comment/${userId}/${slug}/${id}`,{
         headers: { 
           "Content-Type": "application/json",
           "Authorization": "Bearer "
@@ -68,7 +68,7 @@ const [blog,setBlog] = useState([])
     formData.append("description",description);
     try {
 
-      const  data  = await axios.put(`http://localhost:5000/api/blog/${userId}/${slug}`, formData, {
+      const  data  = await axios.put(`https://imntservice.herokuapp.com//api/blog/${userId}/${slug}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "
@@ -96,7 +96,7 @@ useEffect(() => {
     
       
     try {
-      const result = await axios.get(`http://localhost:5000/api/blog/${slug}`);
+      const result = await axios.get(`https://imntservice.herokuapp.com//api/blog/${slug}`);
       setBlog(result.data)
       setDate(result.data.date);
       setTitle(result.data.title);
