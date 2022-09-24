@@ -44,7 +44,7 @@ const NewFormation= () => {
     formData.append("description",description);
     try {
 
-      const  data  = await axios.post(`https://imntservice.herokuapp.com//api/formations/add/${userId}`, formData, {
+      const  data  = await axios.post(`https://imntservice.herokuapp.com/api/formations/add/${userId}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

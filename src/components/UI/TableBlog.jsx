@@ -29,7 +29,7 @@ export default function TableBlog() {
   useEffect(() => {
     const fetchData = async () => {  
       try {
-        const result = await axios.get(`https://imntservice.herokuapp.com//api/blog/getall`);
+        const result = await axios.get(`https://imntservice.herokuapp.com/api/blog/getall`);
         setBlogData(result.data)
 
       } catch(err) {
@@ -46,7 +46,7 @@ export default function TableBlog() {
 
   const deleteHandler = async (id) => {
     try {
-      const { data } = await axios.delete(`https://imntservice.herokuapp.com//api/blog/${userId}/${id}`, {
+      const { data } = await axios.delete(`https://imntservice.herokuapp.com/api/blog/${userId}/${id}`, {
         headers: { 
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

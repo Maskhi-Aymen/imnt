@@ -32,7 +32,7 @@ export default function TableFormation() {
       
         
       try {
-        const result = await axios.get(`https://imntservice.herokuapp.com//api/formations/getall`);
+        const result = await axios.get(`https://imntservice.herokuapp.com/api/formations/getall`);
         setCarData(result.data)
 
       } catch(err) {
@@ -51,7 +51,7 @@ export default function TableFormation() {
 
 
     try {
-      const { data } = await axios.delete(`https://imntservice.herokuapp.com//api/formations/formation/${userId}/${id}`, {
+      const { data } = await axios.delete(`https://imntservice.herokuapp.com/api/formations/formation/${userId}/${id}`, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "

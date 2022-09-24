@@ -35,7 +35,7 @@ const FormationDetails = () => {
     let formData= new FormData();
     setisvalid(true)
     formData.append("img",imgUrl);
-    if(imgUrl){formData.append("imgUrl","https://imntservice.herokuapp.com//uploads/"+imgUrl.name);}
+    if(imgUrl){formData.append("imgUrl","https://imntservice.herokuapp.com/uploads/"+imgUrl.name);}
     else{formData.append("imgUrl",singleCarItem.imgUrl)}
     formData.append("title",title);
     formData.append("type",type);
@@ -48,7 +48,7 @@ const FormationDetails = () => {
     formData.append("description",description);
     
     try {
-      const { data } = await axios.put(`https://imntservice.herokuapp.com//api/formations/formation/${userId}/${singleCarItem._id}`, formData, {
+      const { data } = await axios.put(`https://imntservice.herokuapp.com/api/formations/formation/${userId}/${singleCarItem._id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": "Bearer "
@@ -87,7 +87,7 @@ useEffect(() => {
   const fetchData = async () => {
           
     try {
-      const result = await axios.get(`https://imntservice.herokuapp.com//api/formations/${slug}`);
+      const result = await axios.get(`https://imntservice.herokuapp.com/api/formations/${slug}`);
       setSingle(result.data)
       setDuration(result.data.duration);
       setTitle(result.data.title);

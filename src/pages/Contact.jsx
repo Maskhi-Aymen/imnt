@@ -40,7 +40,7 @@ const Contact = () => {
     { 
     try {
 
-      const  data  = axios.post(`https://imntservice.herokuapp.com//api/users/contact`, {
+      const  data  = axios.post(`https://imntservice.herokuapp.com/api/users/contact`, {
         name:name,email:email,content:content
       }, {
         headers: {

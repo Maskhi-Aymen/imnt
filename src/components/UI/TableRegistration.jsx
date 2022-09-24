@@ -14,7 +14,7 @@ export default function TableRegistration({inscription}) {
   
   const deleteHandler = async (id) => {
     try {
-      const { data } = await axios.delete(`https://imntservice.herokuapp.com//api/formations/inscription/${userId}/${slug}/${id}`,{
+      const { data } = await axios.delete(`https://imntservice.herokuapp.com/api/formations/inscription/${userId}/${slug}/${id}`,{
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer "

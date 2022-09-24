@@ -10,7 +10,7 @@ const BlogList = () => {
   useEffect(() => {
     const fetchData = async () => {  
       try {
-        const result = await axios.get(`https://imntservice.herokuapp.com//api/blog/getall`);
+        const result = await axios.get(`https://imntservice.herokuapp.com/api/blog/getall`);
         setBlogData(result.data)
 
       } catch(err) {

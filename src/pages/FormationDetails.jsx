@@ -27,7 +27,7 @@ const CarDetails = () => {
     const fetchData = async () => {
             
       try {
-        const result = await axios.get(`https://imntservice.herokuapp.com//api/formations/${slug}`);
+        const result = await axios.get(`https://imntservice.herokuapp.com/api/formations/${slug}`);
         setDuration(result.data.duration);
         setTitle(result.data.title);
         setId(result.data._id)
