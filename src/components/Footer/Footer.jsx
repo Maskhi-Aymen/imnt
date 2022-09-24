@@ -38,21 +38,6 @@ const quickLinks = [
 ];
 
 const Footer = () => {
-  const DownloadHandler = async (id) => {
-    try {
-      const data  = await axios.get(`https://imntservice.herokuapp.com/api/users/download`,{
-        headers: { 
-          "Content-Type": "application/json",
-          "Authorization": "Bearer "
-        }
-      }).then((res)=>{
-        FileDownload(res.data,"CATALOGUE-IMNT-2022.pdf")
-      })
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   const date = new Date();
   const year = date.getFullYear();
   return (
@@ -103,8 +88,8 @@ const Footer = () => {
               <h5 className="footer__link-title">Catalogue </h5>
               <p className="section__description" style={{color:"rgba(255, 255, 255, 0.715)"}}>Télecharger notre catalalogue des formations</p>
               <div className="newsletter">
-              <button className=" w-50 car__item-btn car__btn-rent" style={{color:"white"}} onClick={DownloadHandler} >
-            Telechargher
+            <button className=" w-50 car__item-btn car__btn-rent" style={{color:"white"}}  >
+            <a href="https://imntservice.herokuapp.com/api/users/download">  Telechargher</a>
           </button>
               </div>
             </div>
