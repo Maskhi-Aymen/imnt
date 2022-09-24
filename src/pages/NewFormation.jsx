@@ -32,7 +32,7 @@ const NewFormation= () => {
     setisvalid(true)  
     let formData= new FormData();
     formData.append("img",imgUrl);
-    formData.append("imgUrl","https://imntservice.herokuapp.com//uploads/"+imgUrl.name);
+    formData.append("imgUrl","https://imntservice.herokuapp.com/uploads/"+imgUrl.name);
     formData.append("title",title);
     formData.append("type",type);
     formData.append("participant",participant);

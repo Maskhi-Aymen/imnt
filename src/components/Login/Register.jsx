@@ -29,7 +29,7 @@ const Register = () => {
 
         try {
 
-          const { data } =  await axios.post("https://imntservice.herokuapp.com//api/users/register", {
+          const { data } =  await axios.post("https://imntservice.herokuapp.com/api/users/register", {
               username,
               email,
               password,

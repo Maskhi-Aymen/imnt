@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
 
-      const { data } = await axios.post("https://imntservice.herokuapp.com//api/users/login", {
+      const { data } = await axios.post("https://imntservice.herokuapp.com/api/users/login", {
         email,
         password
       }, {
