@@ -1,10 +1,8 @@
 import React from "react";
 import logo from "../../assets/all-images/imnt-blanc.png";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import { FileDownload } from "js-file-download";
 import { BiEnvelope,BiAlarm,BiMap,BiMobile } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "../../styles/footer.css";
 import navIcon1 from "../../assets/all-images/nav-icon1.svg";
 import navIcon2 from "../../assets/all-images/nav-icon2.svg";
@@ -97,7 +95,7 @@ const Footer = () => {
               <div className="social-icon">
                 <a href="#"><img src={navIcon1} alt="Icon" /></a>
                 <a href="https://www.facebook.com/imnt.formation"><img src={navIcon2} alt="Icon" /></a>
-                <a href="#"><img src={navIcon3} alt="Icon" /></a>
+                <a href="https://www.instagram.com/imnt.imnt/?hl=fr"><img src={navIcon3} alt="Icon" /></a>
               </div>
             </CDBBox>
           </Col>
