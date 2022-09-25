@@ -11,6 +11,8 @@ const HeroSlider = () => {
       <Container className="bg2" >
         <div className="slider__content" >
         <h1 className="text-light" > &nbsp;</h1>
+        <div className="titre-hero">
+       <h2>Découvrir Un Secteur En Forte </h2> <h1>Croissance</h1></div>
           <button className="btn reserve__btn mt-4 bottomright" >
             <Link to="/formation">Commencer </Link>
           </button>
