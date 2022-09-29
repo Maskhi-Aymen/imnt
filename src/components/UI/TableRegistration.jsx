@@ -28,13 +28,35 @@ export default function TableRegistration({inscription}) {
 
     }
   }
+  const ValidHandler = async (id) => {
+    try {
+      const { data } = await axios.put(`http://localhost:5000/api/formations/inscription/${userId}/${slug}/${id}`,{
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer "
+        }
+      });
+      window.location.reload(true)
 
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+  const DownloadHandle = async (id) => {
+    
+      const { data } = await axios.put(`http://localhost:5000/api/formations/excel/${userId}/${slug}`);
+       
+  }
+const lien="http://localhost:5000/api/formations/excel/"+userId+"/"+slug
 
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const toggle = () => setTooltipOpen(!tooltipOpen);
   return (<>
       <section className="banner" id="home">
         <Container>
+         <center><a href={lien}> <Button >Télécharger version Excel</Button></a></center>
+         <center> <h2>Liste pré-inscription</h2></center>
           <Table responsive><thead>
             <tr>
             <th>
@@ -57,7 +79,9 @@ export default function TableRegistration({inscription}) {
               </th>
             </tr>
           </thead><tbody>
-              {inscription?.map((item) => (
+              {inscription?.filter((val) => {
+                return !val.f_valid;
+              }).map((item) => (
                 <>   <tr>
                   <th scope="row" key={item._id}>
                     {item.f_name}
@@ -75,7 +99,67 @@ export default function TableRegistration({inscription}) {
                     {item.f_email}
                   </td>
                   <td>
-                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "20px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
+                  <button onClick={(e) => ValidHandler(item._id)} style={{ fontSize: "24px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
+                  <i class="ri-checkbox-line"></i>
+                    </button>
+                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "24px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
+                      <i class="ri-eraser-line" ></i>
+                    </button>
+                  </td>
+                </tr>
+                </>
+              ))}
+
+            </tbody>
+          </Table>
+        </Container>
+      </section>
+      <section className="banner" id="home">
+        <Container>
+        <center> <h2>Liste d'inscription Validée</h2></center>
+          <Table responsive><thead>
+            <tr>
+            <th>
+                Nom
+              </th>
+              <th>
+                Prénom
+              </th>
+              <th>
+                Date d'inscrit
+              </th>
+              <th>
+                Num Tél
+              </th>
+              <th>
+                E-mail
+              </th>
+              <th>
+                Action
+              </th>
+            </tr>
+          </thead><tbody>
+              {inscription?.filter((val) => {
+                return val.f_valid;
+              }).map((item) => (
+                <>   <tr>
+                  <th scope="row" key={item._id}>
+                    {item.f_name}
+                  </th>
+                  <td>
+                    {item.f_lastname}
+                  </td>
+                  <td>
+                    {item.f_date}
+                  </td>
+                  <td>
+                    {item.f_tel}
+                  </td>
+                  <td>
+                    {item.f_email}
+                  </td>
+                  <td>
+                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "24px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
                       <i class="ri-eraser-line" ></i>
                     </button>
                   </td>
