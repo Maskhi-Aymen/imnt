@@ -65,9 +65,10 @@ export default function TableBlog() {
       <section className="banner" id="home">
         <CommonSection title="Administration Blogs" />
         <Container>
-        <Link to={`/admin/newblog`} style={{ fontSize: "20px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }}>
+          <center><div className="mb-5">
+        <Link to={`/admin/newblog`} style={{ fontSize: "24px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }}>
            <i class="ri-add-line"></i>Ajouter une Blog
-        </Link>
+        </Link></div></center>
           <Table responsive><thead>
             <tr>
               <th>
@@ -107,10 +108,10 @@ export default function TableBlog() {
                     {item.date}
                   </td>
                   <td>
-                  <Link to={`/admin/blog/${item._id}`} style={{ fontSize: "20px", textDecoration: "none", color: "#E80000",marginLeft:"10px" }}id='modify'>
+                  <Link to={`/admin/blog/${item._id}`} style={{ fontSize: "24px", textDecoration: "none", color: "#E80000",marginLeft:"10px" }}id='modify'>
                       <i class="ri-edit-box-line" ></i>
                     </Link>
-                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "20px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
+                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "24px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
                       <i class="ri-eraser-line" ></i>
                     </button>
                   </td>

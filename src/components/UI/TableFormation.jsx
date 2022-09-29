@@ -75,10 +75,10 @@ export default function TableFormation() {
         <CommonSection title="Administration Formation" />
       
         <Container>
-           
-           <Link to={`/admin/newformation`} style={{ fontSize: "20px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }}>
+        <center><div className="mb-5">
+           <Link to={`/admin/newformation`} style={{ fontSize: "24px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }}>
            <i class="ri-add-line"></i>Ajouter une formation
-        </Link>
+        </Link></div></center>
           <Table responsive><thead>
             <tr>
             <th>
@@ -86,6 +86,9 @@ export default function TableFormation() {
               </th>
               <th>
                 Type
+              </th>
+              <th>
+                Nombre d'inscription
               </th>
               <th>
                 Durée
@@ -97,7 +100,7 @@ export default function TableFormation() {
                 Formateur
               </th>
               <th>
-                Action
+                
               </th>
             </tr>
           </thead><tbody>
@@ -112,6 +115,9 @@ export default function TableFormation() {
                     {item.type}
                   </td>
                   <td>
+                    {item.inscription.length}
+                  </td>
+                  <td>
                     {item.duration}
                   </td>
                   <td>
@@ -121,10 +127,10 @@ export default function TableFormation() {
                     {item.formateur}
                   </td>
                   <td>
-                    <Link to={`/admin/formation/${item._id}`} style={{ fontSize: "20px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }} id='modify'>
+                    <Link to={`/admin/formation/${item._id}`} style={{ fontSize: "24px", textDecoration: "none", color: "#E80000", marginLeft: "10px" }} id='modify'>
                       <i class="ri-edit-box-line" ></i>
                     </Link>
-                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "20px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
+                    <button onClick={(e) => deleteHandler(item._id)} style={{ fontSize: "24px", border: 'transparent', backgroundColor: "transparent", color: "#E80000", marginLeft: "10px" }} id='delete'>
                       <i class="ri-eraser-line" ></i>
                     </button>
                   </td>
@@ -146,7 +152,7 @@ export default function TableFormation() {
 
           </ModalBody>
           <ModalFooter>
-            <Button style={{backgroundColor:'#E2001A'}} onClick={()=>{toggle2();window.location.reload(true)}}>
+            <Button style={{backgroundColor:'#E2401A'}} onClick={()=>{toggle2();window.location.reload(true)}}>
               Fermer
             </Button>
           </ModalFooter>
