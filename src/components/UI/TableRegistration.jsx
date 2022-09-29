@@ -30,7 +30,7 @@ export default function TableRegistration({inscription}) {
   }
   const ValidHandler = async (id) => {
     try {
-      const { data } = await axios.put(`http://localhost:5000/api/formations/inscription/${userId}/${slug}/${id}`,{
+      const { data } = await axios.put(`https://imntservice.herokuapp.com/api/formations/inscription/${userId}/${slug}/${id}`,{
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer "
@@ -43,12 +43,8 @@ export default function TableRegistration({inscription}) {
 
     }
   }
-  const DownloadHandle = async (id) => {
-    
-      const { data } = await axios.put(`http://localhost:5000/api/formations/excel/${userId}/${slug}`);
-       
-  }
-const lien="http://localhost:5000/api/formations/excel/"+userId+"/"+slug
+
+const lien="https://imntservice.herokuapp.com/api/formations/excel/"+userId+"/"+slug
 
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const toggle = () => setTooltipOpen(!tooltipOpen);
